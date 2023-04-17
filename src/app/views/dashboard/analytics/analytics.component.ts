@@ -2,7 +2,7 @@ import {
   Component,
   OnInit,
   AfterViewInit,
-  ChangeDetectionStrategy
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { matxAnimations } from "app/shared/animations/matx-animations";
 import { ThemeService } from "app/shared/services/theme.service";
@@ -13,7 +13,7 @@ import PerfectScrollbar from "perfect-scrollbar";
   selector: "app-analytics",
   templateUrl: "./analytics.component.html",
   styleUrls: ["./analytics.component.scss"],
-  animations: matxAnimations
+  // animations: matxAnimations
 })
 export class AnalyticsComponent implements OnInit, AfterViewInit {
   trafficVsSaleOptions: any;
@@ -38,26 +38,26 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
       icon: "people",
       title: "New Leads",
       amount: "3,050",
-      color: "primary"
+      color: "primary",
     },
     {
       icon: "attach_money",
       title: "This week Sales",
       amount: "$80,500",
-      color: "primary"
+      color: "primary",
     },
     {
       icon: "store",
       title: "Inventory Status",
       amount: "8.5% Stock Surplus",
-      color: "accent"
+      color: "accent",
     },
     {
       icon: "shopping_cart",
       title: "Orders to deliver",
       amount: "305 Orders",
-      color: "accent"
-    }
+      color: "accent",
+    },
   ];
 
   productList = [
@@ -65,55 +65,55 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
       imgUrl: "/assets/images/products/headphone-2.jpg",
       name: "earphone",
       price: 100,
-      available: 15
+      available: 15,
     },
     {
       imgUrl: "/assets/images/products/headphone-3.jpg",
       name: "earphone",
       price: 1500,
-      available: 30
+      available: 30,
     },
     {
       imgUrl: "/assets/images/products/iphone-2.jpg",
       name: "iPhone x",
       price: 1900,
-      available: 35
+      available: 35,
     },
     {
       imgUrl: "/assets/images/products/iphone-1.jpg",
       name: "iPhone x",
       price: 100,
-      available: 0
+      available: 0,
     },
     {
       imgUrl: "/assets/images/products/headphone-3.jpg",
       name: "Head phone",
       price: 1190,
-      available: 5
-    }
+      available: 5,
+    },
   ];
 
   onGoingProjectList = [
     {
       icon: "start_border",
       color: "warn",
-      title: "project 1"
+      title: "project 1",
     },
     {
       icon: "date_range",
       color: "primary",
-      title: "project 2"
+      title: "project 2",
     },
     {
       icon: "start_border",
       color: "warn",
-      title: "project 3"
+      title: "project 3",
     },
     {
       icon: "date_range",
       color: "accent",
-      title: "project 4"
-    }
+      title: "project 4",
+    },
   ];
 
   displayedColumns: string[] = ["name", "price", "available", "action"];
@@ -122,7 +122,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {}
   ngOnInit() {
-    this.themeService.onThemeChange.subscribe(activeTheme => {
+    this.themeService.onThemeChange.subscribe((activeTheme) => {
       this.initDoughNutPieOptions(activeTheme);
       this.initDailyTrafficChartBar(activeTheme);
     });
@@ -133,11 +133,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
   initDoughNutPieOptions(theme) {
     this.doughNutPieOptions = {
       backgroundColor: "transparent",
-      color: [
-        "#f44336",
-        "#ff9e43",
-        "rgba(116, 103, 239, 1)"
-      ],
+      color: ["#f44336", "#ff9e43", "rgba(116, 103, 239, 1)"],
       legend: {
         show: true,
         itemGap: 20,
@@ -145,33 +141,33 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         bottom: 0,
         textStyle: {
           fontSize: 13,
-          fontFamily: "roboto"
-        }
+          fontFamily: "roboto",
+        },
       },
       tooltip: {
         show: true,
         trigger: "item",
-        formatter: "{a} <br/>{b}: {c} ({d}%)"
+        formatter: "{a} <br/>{b}: {c} ({d}%)",
       },
       xAxis: [
         {
           axisLine: {
-            show: false
+            show: false,
           },
           splitLine: {
-            show: false
-          }
-        }
+            show: false,
+          },
+        },
       ],
       yAxis: [
         {
           axisLine: {
-            show: false
+            show: false,
           },
           splitLine: {
-            show: false
-          }
-        }
+            show: false,
+          },
+        },
       ],
 
       series: [
@@ -182,7 +178,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
           center: ["50%", "50%"],
           avoidLabelOverlap: false,
           hoverOffset: 0,
-          emphasis: {disabled: true},
+          emphasis: { disabled: true },
           stillShowZeroSum: false,
 
           label: {
@@ -191,46 +187,46 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
               position: "center",
               textStyle: {
                 fontSize: "13",
-                fontWeight: "normal"
+                fontWeight: "normal",
               },
-              formatter: "{a}"
+              formatter: "{a}",
             },
             emphasis: {
               show: true,
               textStyle: {
                 fontSize: "15",
                 fontWeight: "normal",
-                color: "rgba(116, 103, 239, 1)"
+                color: "rgba(116, 103, 239, 1)",
               },
-              formatter: "{b} \n{c} ({d}%)"
-            }
+              formatter: "{b} \n{c} ({d}%)",
+            },
           },
           labelLine: {
             normal: {
-              show: false
-            }
+              show: false,
+            },
           },
           data: [
             {
               value: 65,
-              name: "Google"
+              name: "Google",
             },
             {
               value: 20,
-              name: "Facebook"
+              name: "Facebook",
             },
-            { value: 15, name: "Others" }
+            { value: 15, name: "Others" },
           ],
 
           itemStyle: {
             emphasis: {
               shadowBlur: 10,
               shadowOffsetX: 0,
-              shadowColor: "rgba(0, 0, 0, 0.5)"
-            }
-          }
-        }
-      ]
+              shadowColor: "rgba(0, 0, 0, 0.5)",
+            },
+          },
+        },
+      ],
     };
   }
 
@@ -240,7 +236,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         top: 16,
         left: 36,
         right: 16,
-        bottom: 32
+        bottom: 32,
       },
       legend: {},
       tooltip: {
@@ -250,12 +246,12 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         axisPointer: {
           type: "cross",
           lineStyle: {
-            opacity: 0
-          }
+            opacity: 0,
+          },
         },
         crossStyle: {
-          color: "#000"
-        }
+          color: "#000",
+        },
       },
       series: [
         {
@@ -265,9 +261,9 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
           smooth: true,
           lineStyle: {
             width: 2,
-            color: "#fff"
-          }
-        }
+            color: "#fff",
+          },
+        },
       ],
       xAxis: {
         show: true,
@@ -286,18 +282,18 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
           "Sep",
           "Oct",
           "Nov",
-          "Dec"
+          "Dec",
         ],
         axisLabel: {
           color: "#ccc",
-          margin: 20
+          margin: 20,
         },
         axisLine: {
-          show: false
+          show: false,
         },
         axisTick: {
-          show: false
-        }
+          show: false,
+        },
       },
       yAxis: {
         type: "value",
@@ -307,21 +303,21 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
           color: "#ccc",
           margin: 20,
           fontSize: 13,
-          fontFamily: "roboto"
+          fontFamily: "roboto",
         },
         splitLine: {
           show: true,
           lineStyle: {
-            color: "rgba(255, 255, 255, .1)"
-          }
+            color: "rgba(255, 255, 255, .1)",
+          },
         },
 
         axisLine: {
-          show: false
+          show: false,
         },
         axisTick: {
-          show: false
-        }
+          show: false,
+        },
       },
       color: [
         {
@@ -333,16 +329,16 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
           colorStops: [
             {
               offset: 0,
-              color: "rgba(255,255,255,0.3)" // color at 0% position
+              color: "rgba(255,255,255,0.3)", // color at 0% position
             },
             {
               offset: 1,
-              color: "rgba(255,255,255,0)" // color at 100% position
-            }
+              color: "rgba(255,255,255,0)", // color at 100% position
+            },
           ],
-          global: false // false by default
-        }
-      ]
+          global: false, // false by default
+        },
+      ],
     };
   }
 
@@ -351,17 +347,59 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
       if (value < 20) {
         return {
           color: "accent",
-          status: `${value} available`
+          status: `${value} available`,
         };
       } else
         return {
           color: "primary",
-          status: `in stock`
+          status: `in stock`,
         };
     } else
       return {
         color: "warn",
-        status: `out of stcok`
+        status: `out of stcok`,
       };
+  }
+
+  tableData = [
+    {
+      id: 1,
+      patientName: "Harshal",
+      mobile: 1234567890,
+      aadhar: "1234 56789 0123",
+      concepptionDate: "2020/12/12",
+      dueDate: "2020/12/12",
+    },
+    {
+      id: 2,
+      patientName: "Vedant",
+      mobile: 1234567890,
+      aadhar: "1234 56789 0123",
+      concepptionDate: "2020/12/12",
+      dueDate: "2020/12/12",
+    },
+    {
+      id: 3,
+      patientName: "vishal",
+      mobile: 1234567890,
+      aadhar: "1234 56789 0123",
+      concepptionDate: "2020/12/12",
+      dueDate: "2020/12/12",
+    },
+  ];
+
+  selectProject: object = {};
+
+  modelOpen: boolean = false;
+
+  toggleModel() {
+    this.modelOpen = !this.modelOpen;
+    console.log(this.modelOpen);
+  }
+
+  setSelectedProject(project) {
+    this.selectProject = project;
+    console.log(this.selectProject);
+    this.toggleModel();
   }
 }

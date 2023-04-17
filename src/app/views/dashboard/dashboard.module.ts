@@ -12,7 +12,6 @@ import { MatDialogModule } from "@angular/material/dialog";
 
 @NgModule({
   imports: [
-    MatDialogModule,
     CommonModule,
     SharedMaterialModule,
     FlexLayoutModule,
@@ -25,6 +24,6 @@ import { MatDialogModule } from "@angular/material/dialog";
     RouterModule.forChild(DashboardRoutes),
   ],
   declarations: [AnalyticsComponent],
-  exports: [MatDialogModule],
+  exports: [],
 })
 export class DashboardModule {}
