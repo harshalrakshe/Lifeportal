@@ -1,4 +1,11 @@
+<div>
+  <div class="patient-registration">
+    <!-- <button class="patient-registration-btn">Patient Registration</button> -->
+    <button mat-raised-button (click)="openDialog(firstDialog)" color="primary">Patient Registration</button>
+
+  </div>
 <table>
+  
   <tr>
     <th>sr.No</th>
     <th>Patient Name</th>
@@ -44,4 +51,95 @@
     <td>xx xx xxxx</td>
     <td></td>
   </tr>
+
 </table>
+</div>
+
+<ng-template #firstDialog>
+<mat-card>
+  <!-- <div class="body">
+    <div class="container"> -->
+      <div class="title"> New Birth Registration</div>
+      <div class="content">
+        <form action="#">
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">Mothers first Name</span>
+              <input type="text" (mouseout)="dddd($event)" placeholder="Enter Mothers first name" required>
+            </div>
+            <div class="input-box">
+              <span class="details">last name</span>
+              <input type="text" placeholder="Enter last name" required>
+            </div>
+  
+            <div class="input-box">
+              <span class="details">Fathers first name</span>
+              <input type="text" placeholder="Enter Fathers first name" required />
+            </div>
+  
+  
+            <div class="input-box">
+              <span class="details"> last name</span>
+              <input type="text" placeholder="Enter  last name" required />
+            </div>
+  
+  
+  
+            <div class="input-box">
+              <span class="details">Baby's Name</span>
+              <input type="text" placeholder=" Babys Name" required />
+            </div>
+  
+  
+            <div class="input-box">
+              <span class="details">Birth date</span>
+              <input type="date" placeholder="enter Birth date" required />
+            </div>
+            <div class="input-box">
+              <span class="details">Delivery Details</span>
+              <input type="text" placeholder="Enter Delivery Details" required>
+            </div>
+            <div class="input-box">
+              <span class="details">Baby's weight</span>
+              <input type="number" placeholder="Babys weight" required>
+            </div>
+            <div class="input-box">
+              <span class="details">Mobile number</span>
+              <input type="number" placeholder="Enter Mobile Number" required>
+            </div>
+  
+            <div class="input-box">
+              <span class="details">Email <Address></Address></span>
+              <input type="text" placeholder="Enter Email Address" required>
+            </div>
+  
+  
+  
+            <div class="input-box">
+              <span class="details">Address detail</span>
+              <input type="text" placeholder="Address details" required>
+            </div>
+  
+            <div class="input-box">
+              <span class="details"> Medical Observations</span>
+              <input type="text" placeholder="Medical Observations" required>
+            </div>
+  
+  
+  
+          </div>
+  
+          <div class="button">
+            <input type="button" value="submit">
+           
+          </div>
+          <div class="button dashboard-button">
+            <input type="button" value="dashboard">
+
+          </div>
+        </form>
+      </div>
+    <!-- </div>
+  </div> -->
+</mat-card>
+</ng-template>
