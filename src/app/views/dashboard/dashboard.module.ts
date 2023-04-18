@@ -9,6 +9,7 @@ import { SharedPipesModule } from "app/shared/pipes/shared-pipes.module";
 import { DashboardRoutes } from "./dashboard.routing";
 import { AnalyticsComponent } from "./analytics/analytics.component";
 import { MatDialogModule } from "@angular/material/dialog";
+import { BregistrationComponent } from './bregistration/bregistration.component';
 
 @NgModule({
   imports: [
@@ -24,7 +25,7 @@ import { MatDialogModule } from "@angular/material/dialog";
     SharedPipesModule,
     RouterModule.forChild(DashboardRoutes),
   ],
-  declarations: [AnalyticsComponent],
+  declarations: [AnalyticsComponent, BregistrationComponent],
   exports: [MatDialogModule],
 })
 export class DashboardModule {}
