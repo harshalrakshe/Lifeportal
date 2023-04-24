@@ -3,11 +3,14 @@ import {
   OnInit,
   AfterViewInit,
   ChangeDetectionStrategy,
+  ChangeDetectionStrategy, TemplateRef
 } from "@angular/core";
 import { matxAnimations } from "app/shared/animations/matx-animations";
 import { ThemeService } from "app/shared/services/theme.service";
 import tinyColor from "tinycolor2";
 import PerfectScrollbar from "perfect-scrollbar";
+import { MatDialog, MatDialogRef } from "@angular/material/dialog";
+
 
 @Component({
   selector: "app-analytics",
@@ -16,22 +19,16 @@ import PerfectScrollbar from "perfect-scrollbar";
   // animations: matxAnimations
 })
 export class AnalyticsComponent implements OnInit, AfterViewInit {
-  trafficVsSaleOptions: any;
-  trafficVsSale: any;
-  trafficData: any;
-  saleData: any;
 
-  sessionOptions: any;
-  sessions: any;
-  sessionsData: any;
+  constructor(
+    public dialog: MatDialog,
+  ){
 
-  trafficGrowthChart: any;
-  bounceRateGrowthChart: any;
+  }
 
-  dailyTrafficChartBar: any;
-  trafficSourcesChart: any;
-  countryTrafficStats: any[];
-  doughNutPieOptions: any;
+  ngOnInit(): void {
+    
+  }
 
   statCardList = [
     {
@@ -125,9 +122,11 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
     this.themeService.onThemeChange.subscribe((activeTheme) => {
       this.initDoughNutPieOptions(activeTheme);
       this.initDailyTrafficChartBar(activeTheme);
+
+  openDialog(dialogName: TemplateRef<any>): void {
+    this.dialog.open(dialogName, {
+      width: '750px'
     });
-    this.initDailyTrafficChartBar(this.themeService.activatedTheme);
-    this.initDoughNutPieOptions(this.themeService.activatedTheme);
   }
 
   initDoughNutPieOptions(theme) {

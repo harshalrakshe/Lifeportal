@@ -36,6 +36,16 @@ export const rootRouterConfig: Routes = [
           ),
         data: { title: "Dashboard", breadcrumb: "DASHBOARD" },
       },
+     {
+      path: "commanPanel",
+        loadChildren: () =>
+          import("./views/comman-panel/comman-panel.module").then(
+            (m) => m.CommanPanelModule
+
+          ),
+        data: { title: "commanPanel", breadcrumb: "commanPanel" },
+      },
+
       {
         path: "others",
         loadChildren: () =>
