@@ -2,7 +2,7 @@
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 100%;
+    width:100%;
   }
   
   td,
@@ -13,7 +13,7 @@ table {
   }
   
   tr:nth-child(even) {
-    background-color: #dddddd;
+    background-color: #1fadc6;
   }
   
   .patient-registration{
@@ -63,17 +63,24 @@ table {
     background: linear-gradient(135deg, #71b7e6, #9b59b6);
   }
   
-  .content form .user-details {
+  // .form-content{
+  //   height: 400px;
+  //   overflow: auto;
+    
+  // }
+   .user-details {
     display: flex;
+    
     // align-self: center;
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 20px 0 12px 0;
+    
     //flex-wrap: wrap;
   }
   
   
-  form .user-details .input-box {
+   .user-details .input-box {
   
     margin-bottom: 10px;
     width: calc(100% / 2 - 15px);
@@ -81,7 +88,7 @@ table {
   }
   
   
-  form .input-box span.details {
+   .input-box span.details {
     // font-size: 12px;
     display: block;
     font-weight: 500;
@@ -95,7 +102,7 @@ table {
     /* font-size: 16px; */
     border-radius: 5px;
     padding: 0 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #d5d3dcfd;
     border-bottom-width: 2px;
     /* margin: 0px 0; */
     transition: all 0.3s ease;
