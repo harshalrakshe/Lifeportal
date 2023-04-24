@@ -24,14 +24,9 @@ import { BregistrationComponent } from './bregistration/bregistration.component'
     SharedPipesModule,
     RouterModule.forChild(DashboardRoutes),
   ],
-<<<<<<< HEAD
   declarations: [
     // AnalyticsComponent,
      BregistrationComponent],
   exports: [MatDialogModule],
-=======
-  declarations: [AnalyticsComponent],
-  exports: [],
->>>>>>> 3ac637bb7079593db8495a8e78f4908925905d88
 })
 export class DashboardModule {}
