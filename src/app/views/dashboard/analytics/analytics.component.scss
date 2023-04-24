@@ -1,1 +1,54 @@
+<<<<<<< HEAD
 // @import '../../../../styles.scss';
+=======
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid hwb(210 14% 85%);
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #71cbe1;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+
+  .card {
+    padding: 10px;
+    border-radius: 8px;
+    background: white;
+    color: black;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    gap: 2rem;
+  }
+}
+>>>>>>> 3ac637bb7079593db8495a8e78f4908925905d88
