@@ -6,13 +6,13 @@ table {
 
 td,
 th {
-  border: 1px solid #dddddd;
+  border: 1px solid hwb(210 14% 85%);
   text-align: left;
   padding: 8px;
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: #71cbe1;
 }
 
 .backdrop {
@@ -43,7 +43,7 @@ tr:nth-child(even) {
 
   .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto;
     grid-template-rows: auto;
     gap: 2rem;
   }

@@ -15,28 +15,61 @@
     <td>{{ obj.aadhar }}</td>
     <td>{{ obj.concepptionDate }}</td>
     <td>{{ obj.dueDate }}</td>
-    <td><button (click)="setSelectedProject({ obj })">edit</button></td>
+    <td><button (click)="setSelectedProject({ obj })">Info</button></td>
   </tr>
 </table>
 
 <div class="backdrop" *ngIf="modelOpen">
   <div class="card">
     <div class="header">
-      <h2>Edit Model</h2>
+      <b> <h1>Mother's Detail</h1></b>
       <button (click)="toggleModel()">Close Model</button>
     </div>
     <div class="grid">
       <div>
-        <h3>Mother's Detail</h3>
+        <h3></h3>
         <p>Name: {{ selectProject.patientName }}</p>
         <p>Mobile Number: {{ selectProject.mobile }}</p>
         <p>Aadhar Number: {{ selectProject.aadhar }}</p>
-        <p>Address: Dummy address</p>
+        <!-- <p>Address: Dummy address</p> -->
       </div>
       <!-- make table below -->
       <table>
         <tr>
-          <td>name</td>
+          <td>Today's Date</td>
+          <td>Owk1d</td>
+          <td>Due Date:</td>
+          <td>JHJHG</td>
+        </tr>
+        <tr>
+          <td>Date of Fetal hert beat should be seen (7w0d)</td>
+          <td>XX/XX/XXXX</td>
+          <td>Anatomy Scan</td>
+          <td>xx/xx/xxxx - xx/xx/xxxx</td>
+        </tr>
+        <tr>
+          <td>Fetal heart beat should be seen</td>
+          <td>xx/xx/xxxx</td>
+          <td>Fetal movements felt (18-20 weeks)</td>
+          <td>xx/xx/xxxx - xx/xx/xxxx</td>
+        </tr>
+        <tr>
+          <td>Ultrasound Screen(11w+2)</td>
+          <td>dxx/xx/xxxx</td>
+          <td>Fetus becomes vaible(24w0d)</td>
+          <td>xx/xx/xxxx - xx/xx/xxxx</td>
+        </tr>
+        <tr>
+          <td>Triple Screen(15-18 weeks)</td>
+          <td>dxx/xx/xxxx</td>
+          <td>Glucose Screen (24-28 weeks)</td>
+          <td>xx/xx/xxxx - xx/xx/xxxx</td>
+        </tr>
+        <tr>
+          <td>Amniocentesis(17-18 weeks)</td>
+          <td>dxx/xx/xxxx</td>
+          <td>Term delivery(37-42 weeks)</td>
+          <td>xx/xx/xxxx - xx/xx/xxxx</td>
         </tr>
       </table>
     </div>
