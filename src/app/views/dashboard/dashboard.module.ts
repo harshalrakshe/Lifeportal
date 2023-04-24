@@ -7,7 +7,7 @@ import { NgChartsModule } from "ng2-charts";
 import { NgxEchartsModule } from "ngx-echarts";
 import { SharedPipesModule } from "app/shared/pipes/shared-pipes.module";
 import { DashboardRoutes } from "./dashboard.routing";
-import { AnalyticsComponent } from "./analytics/analytics.component";
+// import { AnalyticsComponent } from "./analytics/analytics.component";
 import { MatDialogModule } from "@angular/material/dialog";
 import { BregistrationComponent } from './bregistration/bregistration.component';
 
@@ -25,7 +25,9 @@ import { BregistrationComponent } from './bregistration/bregistration.component'
     SharedPipesModule,
     RouterModule.forChild(DashboardRoutes),
   ],
-  declarations: [AnalyticsComponent, BregistrationComponent],
+  declarations: [
+    // AnalyticsComponent,
+     BregistrationComponent],
   exports: [MatDialogModule],
 })
 export class DashboardModule {}
