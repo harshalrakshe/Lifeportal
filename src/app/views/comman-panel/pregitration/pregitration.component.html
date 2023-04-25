@@ -1,0 +1,157 @@
+<div>
+  <div class="patient-registration">
+    <!-- <button class="patient-registration-btn">Patient Registration</button> -->
+    <button mat-raised-button (click)="openDialog(firstDialog)" color="primary">
+      Patient Registration
+    </button>
+  </div>
+  <table>
+    <!-- <h1>{{ item  }}</h1> -->
+
+    <tr>
+      <th>sr.No</th>
+      <th>Patient Name</th>
+      <th>Mobile No</th>
+      <th>Aadhar No</th>
+      <th>Conception date</th>
+      <th>Due date</th>
+    </tr>
+    <tr>
+      <td>1.</td>
+      <td><div (click)="openDialog(DetailsDialog)">xxxx</div></td>
+      <td><div (click)="openDialog(DetailsDialog)">xxxx xxxx xx</div></td>
+      <td><div (click)="openDialog(DetailsDialog)">xxxx xxxx xxxx</div></td>
+      <td><div (click)="openDialog(DetailsDialog)">xx xx xxxx</div></td>
+      <td><div (click)="openDialog(DetailsDialog)">xx xx xxxx</div></td>
+
+      <td></td>
+    </tr>
+    <tr>
+      <td>2.</td>
+      <td>xxxx</td>
+      <td>xxxx xxxx xx</td>
+      <td>xxxx xxxx xxxx</td>
+      <td>xx xx xxxx</td>
+      <td>xx xx xxxx</td>
+
+      <td></td>
+    </tr>
+    <tr>
+      <td>3.</td>
+      <td>xxxx</td>
+      <td>xxxx xxxx xx</td>
+      <td>xxxx xxxx xxxx</td>
+      <td>xx xx xxxx</td>
+      <td>xx xx xxxx</td>
+
+      <td></td>
+    </tr>
+    <tr>
+      <td>4.</td>
+      <td>xxxx</td>
+      <td>xxxx xxxx xx</td>
+      <td>xxxx xxxx xxxx</td>
+      <td>xx xx xxxx</td>
+      <td>xx xx xxxx</td>
+
+      <td></td>
+    </tr>
+  </table>
+</div>
+
+<ng-template #firstDialog>
+  <mat-card>
+    <!-- <div class="body">
+      <div class="container"> -->
+    <div class="title">New Pregnancy Registration</div>
+    <div class="content">
+      <form action="#">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Mothers first Name</span>
+            <input
+              type="text"
+              (mouseout)="dddd($event)"
+              placeholder="Enter Mothers first name"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <span class="details">last name</span>
+            <input type="text" placeholder="Enter last name" required />
+          </div>
+
+          <div class="input-box">
+            <span class="details">Fathers first name</span>
+            <input
+              type="text"
+              placeholder="Enter Fathers first name"
+              required
+            />
+          </div>
+
+          <div class="input-box">
+            <span class="details"> last name</span>
+            <input type="text" placeholder="Enter  last name" required />
+          </div>
+
+          <div class="input-box">
+            <span class="details">Mother's age</span>
+            <input type="text" placeholder=" Mother's age" required />
+          </div>
+
+          <div class="input-box">
+            <span class="details"> Coception date</span>
+            <input type="date" placeholder="enter date" required />
+          </div>
+
+          <div class="input-box">
+            <span class="details">Mother's weight</span>
+            <input type="text" placeholder="Mothers weight" required />
+          </div>
+          <div class="input-box">
+            <span class="details">Mother's Height</span>
+            <input type="number" placeholder="Mothers Height" required />
+          </div>
+
+          <div class="input-box">
+            <span class="details">Mobile number</span>
+            <input type="number" placeholder="Enter Mobile Number" required />
+          </div>
+
+          <div class="input-box">
+            <span class="details">Aadhaar No<Address></Address></span>
+            <input type="number" placeholder="Enter Aadhaar No" required />
+          </div>
+
+          <div class="input-box">
+            <span class="details">Address detail</span>
+            <input type="text" placeholder="Address details" required />
+          </div>
+
+          <div class="input-box">
+            <span class="details"> Know Medical History</span>
+            <input type="text" placeholder="Medical Observations" required />
+          </div>
+        </div>
+
+        <div class="button">
+          <input type="button" value="submit" />
+        </div>
+        <div class="button dashboard-button">
+          <input type="button" value="dashboard" />
+        </div>
+      </form>
+    </div>
+    <!-- </div>
+    </div> -->
+  </mat-card>
+</ng-template>
+
+<ng-template #DetailsDialog>
+  <mat-card>
+    <div class="details-dialog">
+      <app-p-details></app-p-details>
+    </div>
+  </mat-card>
+</ng-template>
