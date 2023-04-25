@@ -25,7 +25,7 @@ export class JwtAuthService {
   token;
   isAuthenticated: Boolean;
   user: User = {};
-  user$ = (new BehaviorSubject<User>(this.user));
+  user$ = new BehaviorSubject<User>(this.user);
   signingIn: Boolean;
   return: string;
   JWT_TOKEN = "JWT_TOKEN";
@@ -37,23 +37,23 @@ export class JwtAuthService {
     private router: Router,
     private route: ActivatedRoute
   ) {
-    this.route.queryParams
-      .subscribe(params => this.return = params['return'] || '/');
+    this.route.queryParams.subscribe(
+      (params) => (this.return = params["return"] || "/")
+    );
   }
 
   public signin(username, password) {
-    return of({token: DEMO_TOKEN, user: DEMO_USER})
-      .pipe(
-        delay(1000),
-        map((res: any) => {
-          this.setUserAndToken(res.token, res.user, !!res);
-          this.signingIn = false;
-          return res;
-        }),
-        catchError((error) => {
-          return throwError(error);
-        })
-      );
+    return of({ token: DEMO_TOKEN, user: DEMO_USER }).pipe(
+      delay(1000),
+      map((res: any) => {
+        this.setUserAndToken(res.token, res.user, !!res);
+        this.signingIn = false;
+        return res;
+      }),
+      catchError((error) => {
+        return throwError(error);
+      })
+    );
 
     // FOLLOWING CODE SENDS SIGNIN REQUEST TO SERVER
 
@@ -76,18 +76,17 @@ export class JwtAuthService {
     shared/components/layouts/admin-layout/admin-layout.component.ts
   */
   public checkTokenIsValid() {
-    return of(DEMO_USER)
-      .pipe(
-        map((profile: User) => {
-          this.setUserAndToken(this.getJwtToken(), profile, true);
-          this.signingIn = false;
-          return profile;
-        }),
-        catchError((error) => {
-          return of(error);
-        })
-      );
-    
+    return of(DEMO_USER).pipe(
+      map((profile: User) => {
+        this.setUserAndToken(this.getJwtToken(), profile, true);
+        this.signingIn = false;
+        return profile;
+      }),
+      catchError((error) => {
+        return of(error);
+      })
+    );
+
     /*
       The following code get user data and jwt token is assigned to
       Request header using token.interceptor
